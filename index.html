@@ -23,6 +23,16 @@
                     output() {
                         return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
                     }
+                },
+                watch: {
+                    counter(value) {
+                        var vm = this;
+
+                        // set counter to 0 after 2 seconds
+                        setTimeout(function () {
+                            vm.counter = 0;
+                        }, 2000)
+                    }
                 }
             });
         </script>
