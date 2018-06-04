@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Computed Properties</title>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="counter++">Increase</button>
+            <button @click="counter--">Decrease</button>
+            <p>Counter: {{ counter }}</p>
+            <p>Result: {{ output }}</p>
+        </div>
+
+        <script src="vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    counter: 0,
+                },
+                computed: {
+                    output() {
+                        return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
